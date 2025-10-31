@@ -6,7 +6,7 @@
   "dependencies": ["bluetooth_adapters"],
   "iot_class": "local_push",
   "integration_type": "hub",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "documentation": "https://github.com/lafema/HA_BLE_Controlle",
   "issue_tracker": "https://github.com/lafema/HA_BLE_Controlle/issues",
   "icon": "icons/icon.png",
