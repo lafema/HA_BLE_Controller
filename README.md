@@ -1,4 +1,2 @@
-# generic_bt
-Generic Bluetooth Integration for Home Assistant
-
-Please check here: https://community.home-assistant.io/t/generic-bluetooth-integration/648952
+# HA_BLE_Controller
+A Home Assistant integration for controlling Bluetooth Low Energy (BLE) devices through GATT services and characteristics.
