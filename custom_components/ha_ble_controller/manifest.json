@@ -1,5 +1,5 @@
 {
-  "domain": "generic_bt",
+  "domain": "ha_ble_controller",
   "name": "HA Bluetooth Low Energy Controller",
   "codeowners": ["@lafema"],
   "config_flow": true,
@@ -8,5 +8,7 @@
   "integration_type": "hub",
   "version": "1.0.0",
   "documentation": "https://github.com/lafema/HA_BLE_Controlle",
-  "issue_tracker": "https://github.com/lafema/HA_BLE_Controlle/issues"
+  "issue_tracker": "https://github.com/lafema/HA_BLE_Controlle/issues",
+  "icon": "icons/icon.png",
+  "logo": "icons/logo.png"
 }

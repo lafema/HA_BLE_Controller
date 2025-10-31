@@ -4,7 +4,7 @@ write_gatt:
   target:
     entity:
       domain: binary_sensor
-      integration: generic_bt
+      integration: ha_ble_controller
   fields:
     target_uuid:
       name: Target UUID
@@ -38,7 +38,7 @@ read_gatt:
   target:
     entity:
       domain: binary_sensor
-      integration: generic_bt
+      integration: ha_ble_controller
   fields:
     target_uuid:
       name: Target UUID
