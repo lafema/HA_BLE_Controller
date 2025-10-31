@@ -18,6 +18,20 @@ write_gatt:
       required: true
       selector:
         text:
+    force_reconnect:
+      name: Force Reconnect
+      description: Force a reconnection before writing data
+      required: false
+      default: false
+      selector:
+        boolean:
+    wake_before_write:
+      name: Read before Write
+      description: Read before Write to wake up device
+      required: false
+      default: false
+      selector:
+        boolean:
 read_gatt:
   name: Read Data from Target UUID
   description: Read Data from Target UUID

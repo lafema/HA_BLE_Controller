@@ -42,8 +42,8 @@ class GenericBTBinarySensor(GenericBTEntity, BinarySensorEntity):
     def is_on(self):
         return self._device.connected
 
-    async def write_gatt(self, target_uuid, data):
-        await self._device.write_gatt(target_uuid, data)
+    async def write_gatt(self, target_uuid, data, force_reconnect, wake_before_write):
+        await self._device.write_gatt(target_uuid, data, force_reconnect, wake_before_write)
         self.async_write_ha_state()
 
     async def read_gatt(self, target_uuid):

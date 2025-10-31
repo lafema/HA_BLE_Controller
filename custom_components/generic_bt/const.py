@@ -14,7 +14,9 @@ class Schema(Enum):
     WRITE_GATT = make_entity_service_schema(
         {
             vol.Required("target_uuid"): cv.string,
-            vol.Required("data"): cv.string
+            vol.Required("data"): cv.string,
+            vol.Optional("force_reconnect", default=False): cv.boolean,
+            vol.Optional("wake_before_write", default=False): cv.boolean
         }
     )
     READ_GATT = make_entity_service_schema(

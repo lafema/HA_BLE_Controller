@@ -44,7 +44,27 @@ class GenericBTDevice:
             else:
                 _LOGGER.debug("Connection reused")
 
-    async def write_gatt(self, target_uuid, data):
+    async def disconnect_client(self):
+        async with self._lock:
+            if self._client:
+                try:
+                    await self._client.disconnect()
+                    _LOGGER.debug("BLE client disconnected")
+                except Exception as e:
+                    _LOGGER.debug("Error while disconnecting client: %s", e)
+                finally:
+                    self._client = None
+            else:
+                _LOGGER.debug("No active client to disconnect")
+
+    async def write_gatt(self, target_uuid, data, force_reconnect, wake_before_write):
+
+        if force_reconnect:
+            await self.disconnect_client()
+
+        if wake_before_write:
+            await self.read_gatt(target_uuid)
+
         await self.get_client()
         uuid_str = "{" + target_uuid + "}"
         uuid = UUID(uuid_str)
@@ -56,7 +76,7 @@ class GenericBTDevice:
         uuid_str = "{" + target_uuid + "}"
         uuid = UUID(uuid_str)
         data = await self._client.read_gatt_char(uuid)
-        print(data)
+        _LOGGER.debug("Read data: %s", data)
         return data
 
     def update_from_advertisement(self, advertisement):
