@@ -21,14 +21,14 @@ write_gatt:
     force_reconnect:
       name: Force Reconnect
       description: Force a reconnection before writing data
-      required: false
+      required: true
       default: false
       selector:
         boolean:
     wake_before_write:
       name: Read before Write
       description: Read before Write to wake up device
-      required: false
+      required: true
       default: false
       selector:
         boolean:
